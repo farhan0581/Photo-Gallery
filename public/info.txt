@@ -21,3 +21,12 @@ photo_id INT(11) NOT NULL,
 created DATETIME NOT NULL,
 author varchar(255) NOT NULL,
 comment TEXT NOT NULL);
+
+#######################3
+
+echo "# th" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/farhan0581/th.git
+git push -u origin master

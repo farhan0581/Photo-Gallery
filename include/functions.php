@@ -33,6 +33,10 @@
 		}
 	}
 
-	//log_action('dsdc','dccccsf');
+	function datetime_to_text($datetime)
+	{
+		$newtime=strtotime($datetime);
+		return strftime("%B %d, %Y at %I:%M %p",$newtime);
+	}
 
  ?>

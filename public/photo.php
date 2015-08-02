@@ -21,7 +21,7 @@
 		$comment=trim($_POST['comment']);
 
 		$obj=Comment::make_comment($photo[0]['id'],$author,$comment);
-		
+	
 		if($obj && $obj->save())
 		{
 			redirect_to("photo.php?id={$photo[0]['id']}");
@@ -37,10 +37,14 @@
 		$comment="";
 	}
 
+	$obj=new Comment();
+	$allcomments=$obj->find_comment($photo[0]['id']);
+	$count=0;
  ?>
  <!DOCTYPE html>
  <html>
  <head>
+ 	<!-- photo -->
  	<title>Photo</title>
  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
  </head>
@@ -48,10 +52,38 @@
  	<h2>Full Version...</h2>
  	
  	<img src="<?php echo 'images/'.$photo[0]['filename']; ?>" height="600" width="600">
- 	<br>
+ 	<br><br><br>
  	<b>Caption::</b>
+
  	<span><?php echo $photo[0]['caption']; ?></span>
- 	<br>
+ 	<br><br><br>
+ 	<?php if($allcomments) {?>
+ 	<h4>USER COMMENTS</h4>
+
+ 	<!-- user comments -->
+ 	<div>
+ 		<table class="table table-hover">
+ 			<tr>
+ 				<th>No</th>
+ 				<th>User</th>
+ 				<th>Comment</th>
+ 				<th>Time</th>
+ 			</tr>
+ 			<?php 
+ 					foreach ($allcomments as $all) {
+					$count=$count+1; 
+ 			 ?>
+ 			<tr>
+ 				<td><?php echo $count; ?></td>
+ 				<td><?php echo $all['author']; ?></td>
+ 				<td><?php echo $all['comment']; ?></td>
+ 				<td><?php echo datetime_to_text($all['created']); ?></td>
+ 			</tr>
+ 			<?php 
+ 			} ?>
+ 		</table>
+ 	</div>
+ 	<?php } ?>
 
  	<!-- new comment -->
  	<div class="col-lg-4">
@@ -65,7 +97,8 @@
  	<br><br>
  	<input class="btn btn-primary"  type="submit" value="Submit comment" name="submit">
  	<br>	
- 	</form>
+ 	</form><br>
  	</div>
+
  </body>
  </html>

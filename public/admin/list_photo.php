@@ -2,6 +2,7 @@
 
 	require_once('../../include/initialize.php');
 	$photos=Photograph::findall();
+	$comment=new Comment();
 	if(empty($photos))
 	{
 		echo 'nothing to display';
@@ -22,6 +23,7 @@
  				<th>caption</th>
  				<th>Type</th>
  				<th>Size</th>
+ 				<th>Comments</th>
  				<th></th>
  			</tr>
  			<?php 
@@ -35,6 +37,7 @@
  					<td><?php echo $value['caption']; ?></td>
  					<td><?php echo $value['type']; ?></td>
  					<td><?php echo $value['size']; ?></td>
+ 					<td><a href="comments.php?id=<?php echo $value['id']; ?>"><?php echo count($comment->find_comment($value['id'])); ?></a></td>
  					<td><a href="delete_photo.php?id=<?php echo $value['id']; ?>">Delete</a></td>
  				</tr>
  				<?php 
