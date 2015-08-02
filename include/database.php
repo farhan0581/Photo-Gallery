@@ -55,6 +55,7 @@
 		{
 			return mysqli_insert_id($this->connection);
 		}
+		
 		public function affectedrows()
 		{
 			return mysqli_affected_rows($this->connection);
@@ -65,3 +66,7 @@
 	$db = new database();
 	
  ?>
+
+
+
+ 

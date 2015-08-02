@@ -12,3 +12,12 @@ firstname varchar(40),
 lastname varchar(40),
 PRIMARY KEY (id)
 );
+
+######################
+
+CREATE TABLE comments(
+id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+photo_id INT(11) NOT NULL,
+created DATETIME NOT NULL,
+author varchar(255) NOT NULL,
+comment TEXT NOT NULL);
