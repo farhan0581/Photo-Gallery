@@ -1,2 +1,4 @@
-03-08-2015  18:39:09 |---| Logs Cleared |---| Logs cleared by user id= 10
-03-08-2015  18:39:45 |---| Login |---| User user logged-in
+03-08-2015  19:43:57 |---| Logs Cleared |---| Logs cleared by user id= 2
+03-08-2015  19:50:54 |---| ggg |---| dsv
+03-08-2015  20:45:55 |---| Login |---| User user logged-in
+03-08-2015  20:46:44 |---| Login |---| User user logged-in

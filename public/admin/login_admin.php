@@ -2,6 +2,8 @@
 	require_once('../../include/initialize.php');
 
 	require_once('../css/admin_header.php');
+	
+
 
 	if($session_obj->is_logged_in())
 	{
@@ -38,9 +40,10 @@
  <html>
  <head>
  	<title>login</title>
- </head>
- <body class="container">
  	
+ </head>
+ <body class="back">
+ 	<div class="container">
  	<div class="col-lg-4 col-lg-offset-4 jumbotron">
  		<h4>Admin Login</h4>
  		<br><br>
@@ -54,6 +57,7 @@
  			<br>
  			<input type="submit" value="submit" name="submit" class="btn btn-primary">
  		</form>
+ 	</div>
  	</div>
  </body>
  </html>

@@ -40,7 +40,7 @@ class user Extends database
 		}
 		else
 		{
-			echo "no user found";
+			//echo "no user found";
 			return false;
 		}
 
@@ -52,12 +52,12 @@ class user Extends database
 		$result=$db->query($sql);
 		if(mysqli_num_rows($result)>=1)
 		{
-			echo "user exists";
+			//echo "user exists";
 			return self::instantiate($result);
 		}
 		else
 		{
-			echo "no!!";
+			//echo "no!!";
 			return false;
 		}
 	}

@@ -11,15 +11,15 @@
  <head>
  	<title>Home</title>
  </head>
- <body class="container">
+ <body class="container back">
  	<div>
  		<h3>Menu</h3>
  		<br>
- 		<h4><a href="list_photo.php">List Photos</a></h4>
- 		<h4><a href="upload_photo.php">Upload new Photo</a></h4>
- 		<h4><a href="logfile.php">View Log file</a></h4>
- 		<h4><a href="logout.php">Logout</a></h4>
-
+ 		<h4><a href="list_photo.php" class="linkblack">List Photos</a></h4>
+ 		<h4><a href="upload_photo.php" class="linkblack">Upload new Photo</a></h4>
+ 		<h4><a href="logfile.php" class="linkblack">View Log file</a></h4>
+ 		<h4><a href="logout.php" class="linkblack">Logout</a></h4>
+ 	
  	</div>
  </body>
  </html>
