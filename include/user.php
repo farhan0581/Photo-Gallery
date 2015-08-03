@@ -35,11 +35,13 @@ class user Extends database
 
 		if(mysqli_num_rows($result)>=1)
 		{
-			echo "user exists";
+			//echo "user exists";
+			return self::instantiate($result);
 		}
 		else
 		{
 			echo "no user found";
+			return false;
 		}
 
 	}
@@ -51,10 +53,12 @@ class user Extends database
 		if(mysqli_num_rows($result)>=1)
 		{
 			echo "user exists";
+			return self::instantiate($result);
 		}
 		else
 		{
 			echo "no!!";
+			return false;
 		}
 	}
 	protected function getattributes()
@@ -79,6 +83,16 @@ class user Extends database
 			$clean[$key]=$db->mysqlready($value);
 		}
 		return $clean;
+	}
+
+	private static function instantiate($result)
+	{
+		$object=array();
+		while($row=mysqli_fetch_array($result,MYSQLI_ASSOC))
+		{
+			$object[]=$row;
+		}
+		return $object;
 	}
 
 	public function create()

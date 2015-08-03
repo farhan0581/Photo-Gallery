@@ -1,7 +1,11 @@
 <?php 
 	
 	require_once('../css/admin_header.php');
-	require_once('../../include/photograph.php');
+	require_once('../../include/initialize.php');
+	if(!$session_obj->is_logged_in())
+	{
+		redirect_to('login_admin.php');
+	}
 	$max_size=10485760;
 	if(isset($_POST['submit']))
 	{

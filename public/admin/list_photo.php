@@ -1,6 +1,10 @@
 <?php 
 
 	require_once('../../include/initialize.php');
+	if(!$session_obj->is_logged_in())
+	{
+		redirect_to('login_admin.php');
+	}
 	$photos=Photograph::findall();
 	$comment=new Comment();
 	if(empty($photos))

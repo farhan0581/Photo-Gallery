@@ -1,8 +1,8 @@
 <?php 
 
-	function log_action($action,$message)
+	function log_action($action,$message="")
 	{
-		$logfile="../logs/log.txt";
+		$logfile="/opt/lampp/htdocs/gallery/logs/log.txt";
 		if(!file_exists($logfile))
 		{
 			echo "file does not exsist!!";
@@ -12,7 +12,7 @@
 			if($handle=fopen($logfile, 'a+'))
 			{
 				$time=strftime("%d-%m-%Y  %H:%M:%S",time());
-				$content="{$time} | {$action} {$message}\n";
+				$content="{$time} |---| {$action} |---| {$message}\n";
 				fwrite($handle, $content);
 				fclose($handle);
 			}
@@ -39,4 +39,15 @@
 		return strftime("%B %d, %Y at %I:%M %p",$newtime);
 	}
 
+	function display_message($message="")
+	{	
+		if(!empty($message))
+		{
+			return "<b><p>{$message}</p></b>";
+		}
+		else
+		{
+			return "";
+		}
+	}
  ?>

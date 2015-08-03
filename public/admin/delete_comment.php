@@ -1,5 +1,9 @@
 <?php 
 	require_once('../../include/initialize.php');
+	if(!$session_obj->is_logged_in())
+	{
+		redirect_to('login_admin.php');
+	}
 	if(isset($_GET['id']))
 	{
 		$obj=new Comment();
