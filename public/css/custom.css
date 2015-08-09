@@ -1,8 +1,74 @@
 .back
 {
-	background-image: url("../images/gal.jpg");
+	background-image: url("../images/1.jpg");
 }
 .linkblack
 {
 	color: red;
+}
+.admin_header
+{
+	width: 100%;
+	height: 50px;
+	background-color: coral;
+	font-family: Comic Sans MS;
+	padding-left: 20px;
+	/*z-index: 4000;*/
+}
+.admin_text
+{
+	color: white;
+	padding: 10px;
+	font-size: 20px; 
+	//border-radius: 2px;
+}
+.adjust
+{
+	margin-left: 1130px;
+	top: 7px;
+	position: absolute;
+}
+.btn-default
+{
+	color:white;
+background-color: coral;
+border-color: white;
+}
+.sep
+{
+	border: 1px solid lightgray;
+	/*width: 700px;*/
+
+	/*height: 1px;*/
+	background-color: black;
+	width: 230px;
+	margin-bottom: 15px;
+	/*padding-top: 20px;*/
+
+}
+.boxh:hover
+{
+	border:1px solid lightgray;
+}
+.wide
+{
+	padding: 12px;
+}
+.img-rounded:hover
+{
+	opacity: 0.5;
+}
+.glyphicon
+{
+	font-size: 20px;
+}
+.gadjust
+{
+	margin-left: 150px;
+}
+.register_head
+{
+	margin-left: 85px;
+	margin-top: 0px;
+	margin-bottom: 15px;
 }

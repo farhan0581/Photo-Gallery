@@ -7,7 +7,8 @@ require_once('../css/admin_header.php'); ?>
 <!-- <link rel="stylesheet" type="text/css" href="../css/admin_header.php"> -->
 	<title></title>
 </head>
-<body class="container back">
+<body class=" back">
+<div class="container">
 <h3>Log Details</h3>
 <ul class="list-group">
 <?php 
@@ -59,5 +60,6 @@ require_once('../css/admin_header.php'); ?>
   </ul>
   
   <a href="logfile.php?clear=true" class="linkblack">Clear Log</a>
+  </div>
  </body>
 </html>

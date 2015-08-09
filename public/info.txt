@@ -30,3 +30,9 @@ git add README.md
 git commit -m "first commit"
 git remote add origin https://github.com/farhan0581/th.git
 git push -u origin master
+
+INSERT INTO users(username,password,firstname,lastname) SELECT * from 
+(SELECT 'khan' as 'a','far' as 'b','far' as 'c','far' as 'd') as temp WHERE NOT EXISTS (SELECT * from users where username='khan');
+select * from users where not exists (select * from users where username='vcv');
+
+INSERT INTO users(username,password,firstname,lastname) SELECT 'hgkhan','vfgfar','far','farvcvc'  WHERE NOT EXISTS (SELECT * from users where username='khavdvdn');

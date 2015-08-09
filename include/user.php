@@ -5,7 +5,7 @@ require_once('database.php');
 class user Extends database
 {
 	protected static $table_name='users';
-	protected static $dbfds=array('id','username','password','firstname','lastname');
+	protected static $dbfds=array('username','password','firstname','lastname');
 	public $firstname;
 	public $lastname;
 	public $id;
@@ -95,22 +95,27 @@ class user Extends database
 		return $object;
 	}
 
-	public function create()
+	public function create($user)
 	{
 		global $db;
 		$attr=$this->cleanattributes();
 		$sql="INSERT INTO ".self::$table_name."(";
 		$sql.=join(", ",array_keys($attr));
-		$sql.=") values('".join("', '",array_values($attr));
-		$sql.="')";
+		$sql.=") SELECT * FROM (SELECT '".join("', '",array_values($attr));
+		$sql.="') AS temp WHERE NOT EXISTS(SELECT * FROM users WHERE username='{$user}')";
+		//$sql.=") values('".join("', '",array_values($attr));
+		//$sql.="')";
 		$db->query($sql);
+		$this->id=$db->returnid();
 		if($db->returnid()==$this->id)
 		{
 			echo "\nsuccessfully inserted";
+			return true;
 		}
 		else
 		{
 			echo "\nnot inserted";
+			return false;
 		}
 	}
 	public function update()
@@ -145,14 +150,17 @@ class user Extends database
 		if($db->affectedrows()==1)
 		{
 			echo "\nrecord deleted";
+			return true;
 		}
 		else
 		{
 			echo "\n not deleted";
+			return false;
 		}
 	}
 }
 $u=new user();
+
 // $u->authenticate("farhan0581","gdg");
 // $u->findbyid(67);
 // $u->firstname="hj";

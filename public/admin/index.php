@@ -11,8 +11,8 @@
  <head>
  	<title>Home</title>
  </head>
- <body class="container back">
- 	<div>
+ <body class="back">
+ 	<div class="container">
  		<h3>Menu</h3>
  		<br>
  		<h4><a href="list_photo.php" class="linkblack">List Photos</a></h4>

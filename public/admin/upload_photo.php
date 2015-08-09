@@ -35,8 +35,8 @@
  <html>
  <head>
  </head>
- <body class="container back">
-
+ <body class="back">
+ <div class="container">
  	<div class="jumbotron col-lg-8">
  		<h4>Upload Photos</h4>
  		<div class="col-lg-4">
@@ -49,7 +49,7 @@
  		</form>
  		</div>
  	</div>
- 
+ </div>
  </body>
  </html>
 
