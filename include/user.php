@@ -98,14 +98,22 @@ class user Extends database
 	public function create($user)
 	{
 		global $db;
+		$count=0;
 		$attr=$this->cleanattributes();
 		$sql="INSERT INTO ".self::$table_name."(";
 		$sql.=join(", ",array_keys($attr));
-		$sql.=") SELECT * FROM (SELECT '".join("', '",array_values($attr));
-		$sql.="') AS temp WHERE NOT EXISTS(SELECT * FROM users WHERE username='{$user}')";
+		$sql.=") SELECT * FROM ( SELECT ";
+		foreach ($attr as $value) {
+			$count=$count+1;
+			$sql.=" '{$value}' as a{$count},";
+		}
+		$fsql=substr($sql, 0,-1);
+		//$sql.=")"
+		//$sql.=") SELECT * FROM (SELECT '".join("', '",array_values($attr));
+		$fsql.=") AS temp WHERE NOT EXISTS(SELECT * FROM users WHERE username='{$user}')";
 		//$sql.=") values('".join("', '",array_values($attr));
 		//$sql.="')";
-		$db->query($sql);
+		$db->query($fsql);
 		$this->id=$db->returnid();
 		if($db->returnid()==$this->id)
 		{

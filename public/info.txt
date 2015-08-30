@@ -36,3 +36,34 @@ INSERT INTO users(username,password,firstname,lastname) SELECT * from
 select * from users where not exists (select * from users where username='vcv');
 
 INSERT INTO users(username,password,firstname,lastname) SELECT 'hgkhan','vfgfar','far','farvcvc'  WHERE NOT EXISTS (SELECT * from users where username='khavdvdn');
+
+
+#########################################################
+ apt-get remove --purge fglrx fglrx_* fglrx-amdcccle* fglrx-dev*
+
+
+ cmake -D CMAKE_BUILD_TYPE=RELEASE \
+	-D CMAKE_INSTALL_PREFIX=/usr/local \
+	-D INSTALL_C_EXAMPLES=ON \
+	-D INSTALL_PYTHON_EXAMPLES=ON \
+	-D OPENCV_EXTRA_MODULES_PATH=/home/farhan/opencv_contrib/modules \
+	-D BUILD_EXAMPLES=ON..
+
+
+
+	sudo apt-get install build-essential libgtk2.0-dev libjpeg-dev libtiff4-dev libjasper-dev libopenexr-dev cmake python-dev python-numpy python-tk libtbb-dev libeigen3-dev yasm libfaac-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev libqt4-dev libqt4-opengl-dev sphinx-common texlive-latex-extra libv4l-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev default-jdk ant libvtk5-qt4-dev
+
+	cmake -D CMAKE_BUILD_TYPE=RELEASE \
+	-D BUILD_OPENCV_PYTHON2=ON \
+	-D CMAKE_INSTALL_PREFIX=/usr/local \
+	-D INSTALL_C_EXAMPLES=ON \
+	-D INSTALL_PYTHON_EXAMPLES=ON \
+	-DOPENCV_EXTRA_MODULES_PATH=/home/farhan/opencv_contrib/modules /home/farhan/opencv/ \
+
+	-D BUILD_EXAMPLES=ON ..
+
+
+
+	cmake -DOPENCV_EXTRA_MODULES_PATH=/home/farhan/opencv_contrib/modules <opencv_source_directory>
+
+	 -D BUILD_opencv_python3=ON or -D BUILD_opencv_python2=ON in your cmake command to ensure the bindings are correctly built.
