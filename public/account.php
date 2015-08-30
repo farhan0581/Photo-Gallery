@@ -33,7 +33,7 @@
 
  ?>
  <!DOCTYPE html>
-<!--required-->
+<!--required till here-->
  <html>
  <head>
  	<title>Register</title>
